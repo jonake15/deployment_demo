@@ -1,24 +1,48 @@
-import React from "react";
+import { React, useRef } from "react";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
+  const navbar = useRef();
+  const ul = useRef();
+
+  const handleClick = () => {
+    navbar.current.classList.toggle("block");
+    ul.current.classList.toggle("ul-block");
+    // ul.current.style.visibility = "visible";
+    // ul.current.style.display = "block";
+  };
   return (
-    <div className="navbar">
-      <ul>
+    <div ref={navbar} className="navbar">
+      <button className="btn" onClick={handleClick}>
+        Click
+      </button>
+
+      <ul ref={ul}>
+        <li></li>
         <li>
-          <Link to="/">Home</Link>
+          <Link className="link" to="/">
+            Home
+          </Link>
         </li>
         <li>
-          <Link to="/houses">Houses</Link>
+          <Link className="link" to="/houses">
+            Houses
+          </Link>
         </li>
         <li>
-          <Link to="/services">Services</Link>
+          <Link className="link" to="/services">
+            Services
+          </Link>
         </li>
         <li>
-          <Link to="/aboutus">About Us</Link>
+          <Link className="link" to="/aboutus">
+            About Us
+          </Link>
         </li>
         <li>
-          <Link to="/contactus">Contact Us</Link>
+          <Link className="link" to="/contactus">
+            Contact Us
+          </Link>
         </li>
       </ul>
     </div>

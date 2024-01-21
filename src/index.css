@@ -5,9 +5,17 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+/* Css variables */
+:root {
+  ---primary-color: #333;
+  --secondary-color: #f1f5f8;
+  --card-color: #fff;
+}
+
 body {
   font-family: "Merriweather Sans", sans-serif;
-  background: #f1f5f8;
+  background: var(--secondary-color);
 }
 
 .houselist {
@@ -25,7 +33,7 @@ body {
 }
 /* House Component */
 .houseContainer {
-  background: #fff;
+  background: var(--card-color);
   border-radius: 1rem;
   /* padding: 2rem; */
   text-align: center;
@@ -96,21 +104,50 @@ span {
 }
 
 /* Navbar component */
+
 .navbar {
-  background-color: black;
-  color: #fff;
+  background-color: var(---primary-color);
+  color: var(--card-color);
   width: 100%;
   position: relative;
 }
 .navbar ul {
   display: flex;
+  flex-direction: row;
   justify-content: end;
   /* background-color: blue; */
-  margin-right: 4rem;
+  padding-right: 4rem;
   list-style: none;
+}
+@media screen and (max-width: 740px) {
+  .navbar ul {
+    display: none;
+  }
+  .btn {
+    display: block !important;
+  }
+  .navbar ul li {
+    padding: 2rem 1rem;
+  }
+}
+.block {
+  height: 100vh;
+}
+.ul-block {
+  display: block !important;
+  flex-direction: column;
+  height: 100vh;
+  text-align: center;
 }
 .navbar ul li {
   padding: 2rem 1rem;
+}
+
+.navbar ul li:nth-child(1) {
+  /* background-color: white; */
+  justify-content: start;
+  position: absolute;
+  left: 0;
 }
 .navbar ul li a {
   font-size: medium;
@@ -131,10 +168,21 @@ span {
   left: 10%;
 }
 
+.btn {
+  display: none;
+  position: relative;
+  top: 0;
+}
+
 /* Home Component */
 .content {
   /* background-color: blue; */
   height: 100vh;
   text-align: center;
   line-height: 100vh;
+}
+
+.link {
+  text-decoration: none;
+  color: var(--secondary-color);
 }
