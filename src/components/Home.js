@@ -18,7 +18,7 @@ const Home = () => {
       <Navbar />
       <div className="content">
         <h1 ref={heading}>This is the Hero {change} </h1>
-        <button onClick={changeColor}> Change Colors</button>
+        {/* <button onClick={changeColor}> Change Colors</button> */}
       </div>
     </>
   );

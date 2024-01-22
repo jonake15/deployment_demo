@@ -195,10 +195,24 @@ span {
 
 /* Home Component */
 .content {
-  /* background-color: blue; */
-  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: var(--secondary-color);
+  height: 88.5vh;
   text-align: center;
   line-height: 100vh;
+}
+
+.content::before {
+  content: "";
+  background: url("./images/grant-durr-0YPo1dZ36uQ-unsplash.jpg") no-repeat
+    center center/cover;
+  position: absolute;
+  height: 100%;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 .link {
