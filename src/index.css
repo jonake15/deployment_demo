@@ -1,5 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=FAMILY_NAME:wght@WEIGHT_OR_RANGE&display=swap");
 
+/* General */
+.content {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: var(--secondary-color);
+  height: 88.5vh;
+  text-align: center;
+  line-height: 100vh;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -123,6 +132,7 @@ span {
   .navbar ul {
     display: none;
     padding-right: 0;
+    z-index: 1;
   }
   .btn {
     display: block !important;
@@ -142,6 +152,11 @@ span {
 }
 .navbar ul li {
   padding: 2rem 1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.navbar ul li:hover {
+  background-color: black;
 }
 
 .navbar ul li:nth-child(1) {
@@ -194,15 +209,16 @@ span {
 }
 
 /* Home Component */
-.content {
+.content-1 {
   background-color: rgba(0, 0, 0, 0.6);
   color: var(--secondary-color);
   height: 88.5vh;
   text-align: center;
   line-height: 100vh;
+  position: relative;
 }
 
-.content::before {
+.content-1::before {
   content: "";
   background: url("./images/grant-durr-0YPo1dZ36uQ-unsplash.jpg") no-repeat
     center center/cover;
@@ -218,4 +234,35 @@ span {
 .link {
   text-decoration: none;
   color: var(--secondary-color);
+}
+
+/* Footer Component */
+.footerContainer {
+  position: relative;
+  background-color: var(---primary-color);
+  color: var(--secondary-color);
+  height: 50vh;
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 3rem;
+  gap: 2rem;
+}
+
+.footerContainer .content-footer {
+  margin: 0 3rem;
+  left: 25%;
+
+  width: 10rem;
+}
+
+.content-footer > p {
+  padding: 0.2rem;
+  font-size: small;
+}
+
+@media screen and (max-width: 1210px) {
+  .footerContainer {
+    flex-wrap: wrap;
+    height: 100%;
+  }
 }

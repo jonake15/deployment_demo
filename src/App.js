@@ -5,7 +5,7 @@ import Form from "./components/Form";
 import AboutUs from "./components/AboutUs";
 import Home from "./components/Home";
 import ContactUs from "./components/ContactUs";
-import HouseList from "./components/HouseList";
+import Houses from "./components/Houses";
 
 const App = () => {
   return (
@@ -15,7 +15,7 @@ const App = () => {
         <Route path="/services" element={<Services />} />
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/contactus" element={<ContactUs />} />
-        <Route path="/houses" element={<HouseList />} />
+        <Route path="/houses" element={<Houses />} />
       </Routes>
     </>
   );

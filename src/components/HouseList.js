@@ -8,7 +8,6 @@ const HouseList = () => {
   const { image, name, price, rooms } = utils;
   return (
     <>
-      <Navbar />
       <div className="houselist">
         {utils.map((data) => {
           const { image, name, price, rooms } = data; //destructuring
