@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import Navbar from "./Navbar";
-import HouseList from "./HouseList";
+import HomeHouseList from "./HomeHouseList";
 import FooterSection from "./FooterSection";
 
 const Home = () => {
@@ -19,10 +19,24 @@ const Home = () => {
     <>
       <Navbar />
       <div className="content-1">
-        <h1 ref={heading}>This is the Hero {change} </h1>
-        {/* <button onClick={changeColor}> Change Colors</button> */}
+        <div className="heroContainer">
+          <button>Rent</button>
+          <button>Sale</button>
+
+          <form>
+            <h2>Select house to your prefernce</h2>
+
+            <select id="cars" name="cars">
+              <option value="location">Location</option>
+              <option value="bugolobi">Bugolobi</option>
+              <option value="buziga">Buziga</option>
+              <option value="bunga">Bunga</option>
+              <option value="naguru">Naguru</option>
+            </select>
+          </form>
+        </div>
       </div>
-      <HouseList />
+      <HomeHouseList />
       <FooterSection />
     </>
   );

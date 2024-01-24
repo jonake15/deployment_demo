@@ -23,22 +23,4 @@ export const utils = [
     price: "3000",
     rooms: "5",
   },
-  {
-    image: img1,
-    name: "House in Bugolobi",
-    price: 4000,
-    rooms: 4,
-  },
-  {
-    image: img2,
-    name: "House in Kawempe",
-    price: "2000",
-    rooms: "2",
-  },
-  {
-    image: img3,
-    name: "House in Naguru",
-    price: "3000",
-    rooms: "5",
-  },
 ];

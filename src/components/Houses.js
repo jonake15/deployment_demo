@@ -3,6 +3,7 @@ import { utils } from "../data";
 import House from "./House";
 import Navbar from "./Navbar";
 import HouseList from "./HouseList";
+import FooterSection from "./FooterSection";
 
 const Houses = () => {
   const { image, name, price, rooms } = utils;
@@ -10,6 +11,7 @@ const Houses = () => {
     <>
       <Navbar />
       <HouseList />
+      <FooterSection />
     </>
   );
 };

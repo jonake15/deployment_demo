@@ -31,11 +31,13 @@ const Navbar = () => {
       </button>
 
       <ul ref={ul}>
-        <li></li>
+        <li></li>{" "}
         <li>
-          <Link className="link" to="/">
-            Home
-          </Link>
+          <label>
+            <Link className="link" to="/">
+              Home
+            </Link>
+          </label>
         </li>
         <li>
           <Link className="link" to="/houses">

@@ -11,8 +11,12 @@ const House = (props) => {
         </div>
         <div className="houseContent">
           <h2>{props.name}</h2>
-          <p>Price: {props.price}</p>
-          <p>Rooms: {props.rooms}</p>
+          <div className="flexbox">
+            <p>Price: {props.price}</p>
+            <p>
+              <i class="fa fa-bed"></i> Rooms: {props.rooms}
+            </p>
+          </div>
         </div>
       </div>
     </>

@@ -11,9 +11,9 @@ const FooterSection = () => {
           <br />
           <h2>ESTATE</h2>
           <ul>
-            <li>
-              <a to="">Your trusted form for real estate </a>
-            </li>
+            <p style={{ padding: "0.2rem", fontSize: "small" }}>
+              Your trusted form for best houses and apartments in Uganda{" "}
+            </p>
           </ul>
         </div>
         <div className="content-footer">

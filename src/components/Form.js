@@ -18,7 +18,7 @@ const Form = () => {
   return (
     <div className="form">
       <h1>Login Now</h1>
-      <form>
+      <form className="formLogin">
         <input
           type="text"
           name="username"

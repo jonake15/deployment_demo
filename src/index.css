@@ -15,6 +15,13 @@
   box-sizing: border-box;
 }
 
+.flexbox {
+  display: flex;
+  justify-content: center;
+  padding-top: 1rem;
+  gap: 2rem;
+}
+
 /* Css variables */
 :root {
   ---primary-color: #333;
@@ -38,6 +45,11 @@ body {
 @media screen and (min-width: 768px) {
   .houselist {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (max-width: 768px) {
+  .houselist {
+    padding: 1rem 2.5rem;
   }
 }
 /* House Component */
@@ -74,12 +86,12 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-form {
+.formLogin {
   display: flex;
   flex-direction: column;
 }
 
-form input {
+.formLogin input {
   margin-top: 2rem;
   height: 2rem;
   outline: none;
@@ -87,11 +99,11 @@ form input {
   padding-left: 1rem;
 }
 
-/* form input::placeholder {
+/* .formLogin input::placeholder {
   padding-left: 1rem;
 } */
 
-form button {
+.formLogin button {
   margin-top: 2rem;
   height: 2.5rem;
   border: none;
@@ -100,7 +112,7 @@ form button {
   color: #fff;
 }
 
-form button:hover {
+.formLogin button:hover {
   background-color: green;
   color: white;
   cursor: pointer;
@@ -214,7 +226,8 @@ span {
   color: var(--secondary-color);
   height: 88.5vh;
   text-align: center;
-  line-height: 100vh;
+  /* top: 50%; */
+  line-height: 0vh;
   position: relative;
 }
 
@@ -231,6 +244,57 @@ span {
   bottom: 0;
 }
 
+.content-1 .heroContainer {
+  /* background-color: blue; */
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.content-1 .heroContainer button {
+  outline: none;
+  border: none;
+  color: white;
+  padding: 1rem 1.5rem;
+  background-color: var(---primary-color);
+  margin: 0.1rem;
+  font-size: large;
+}
+
+.content-1 .heroContainer form {
+  width: 30rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  /* height: 10rem; */
+  padding: 2rem;
+}
+.content-1 .heroContainer form #cars {
+  font-size: 1rem;
+  padding: 5px;
+  width: 100%;
+  outline: none;
+}
+
+.content-1 .heroContainer form h2 {
+  margin-bottom: 1.5rem;
+  word-wrap: break-word;
+  font-size: large;
+}
+
+@media screen and (max-width: 600px) {
+  .content-1 .heroContainer form {
+    width: 25rem;
+    background-color: rgba(0, 0, 0, 0.6);
+    /* height: 10rem; */
+    padding: 2rem;
+  }
+  .content-1 .heroContainer form h2 {
+    margin-bottom: 1.5rem;
+    font-size: medium;
+  }
+}
+
 .link {
   text-decoration: none;
   color: var(--secondary-color);
@@ -245,7 +309,7 @@ span {
   display: flex;
   justify-content: space-evenly;
   padding-top: 3rem;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .footerContainer .content-footer {
