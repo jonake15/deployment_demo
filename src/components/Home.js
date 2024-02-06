@@ -16,7 +16,7 @@ const Home = () => {
   };
 
   return (
-    <>
+    <div className="universalCont">
       <Navbar />
       <div className="content-1">
         <div className="heroContainer">
@@ -36,9 +36,9 @@ const Home = () => {
           </form>
         </div>
       </div>
-      <HomeHouseList />
+      {/* <HomeHouseList /> */}
       <FooterSection />
-    </>
+    </div>
   );
 };
 export default Home;

@@ -15,6 +15,17 @@
   box-sizing: border-box;
 }
 
+body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.universalCont {
+  height: 100%;
+  /* background-color: blue; */
+}
 .flexbox {
   display: flex;
   justify-content: center;
@@ -24,9 +35,10 @@
 
 /* Css variables */
 :root {
-  ---primary-color: #333;
-  --secondary-color: #f1f5f8;
-  --card-color: #fff;
+  ---primary-color: #bfa100;
+  --secondary-color: #e9eaec;
+  --tertiary-color: #000;
+  --universal-color: #fff;
 }
 
 body {
@@ -137,7 +149,7 @@ span {
   flex-direction: row;
   justify-content: end;
   /* background-color: blue; */
-  padding-right: 4rem;
+  padding-right: 3rem;
   list-style: none;
 }
 @media screen and (max-width: 740px) {
@@ -150,7 +162,7 @@ span {
     display: block !important;
   }
   .navbar ul li {
-    padding: 2rem 1rem;
+    padding: 1rem 1rem;
   }
 }
 .block {
@@ -163,7 +175,7 @@ span {
   text-align: center;
 }
 .navbar ul li {
-  padding: 2rem 1rem;
+  padding: 0rem 1rem;
   transition: all 0.3s ease;
   cursor: pointer;
 }
@@ -303,7 +315,7 @@ span {
 /* Footer Component */
 .footerContainer {
   position: relative;
-  background-color: var(---primary-color);
+  background-color: var(--tertiary-color);
   color: var(--secondary-color);
   height: 50vh;
   display: flex;
@@ -328,5 +340,126 @@ span {
   .footerContainer {
     flex-wrap: wrap;
     height: 100%;
+  }
+}
+
+/* Navbar Test */
+
+/* .container-navbar {
+  height: 100vh;
+  background-color: var(--secondary-color);
+} */
+.navbar-test {
+  background-color: var(---primary-color);
+  color: white;
+  position: relative;
+  display: flex;
+
+  justify-content: center;
+  height: 4rem;
+}
+ul {
+  list-style-type: none;
+  /* height: 3rem; */
+  display: flex;
+  position: absolute;
+  top: 1.2rem;
+  margin: 1rem;
+  align-self: start;
+  text-align: center;
+}
+
+.show {
+  display: block !important;
+}
+.hide {
+  display: none !important;
+}
+
+.navbar-test ul:first-child {
+  /* background-color: pink; */
+  display: none;
+  position: absolute;
+  left: 2rem;
+  padding: 0;
+  font-size: large;
+}
+
+.navbar-test ul:first-child li:nth-child(2) {
+  position: absolute;
+  top: 0;
+  display: none;
+}
+.navbar-test ul:nth-child(2) {
+  /* background-color: red; */
+  position: absolute;
+  left: 4rem;
+  padding: 0;
+}
+.navbar-test ul:nth-child(3) {
+  /* background-color: orange; */
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+.navbar-test ul:nth-child(3) li {
+  /* background-color: blue; */
+  margin: 0 1rem;
+}
+.navbar-test ul:nth-child(4) {
+  background-color: var(--universal-color);
+  position: absolute;
+  right: 2rem;
+  padding: 0;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+}
+.navbar-test ul:nth-child(4) li {
+  position: relative;
+  color: var(--tertiary-color);
+  left: 5.5px;
+  bottom: 2px;
+  text-align: center;
+  font-size: larger;
+}
+
+.active {
+  font-weight: 600;
+  color: var(--tertiary-color);
+}
+
+@media screen and (max-width: 700px) {
+  .navbar-test ul:first-child {
+    display: block !important;
+  }
+  .navbar-test ul:nth-child(3) {
+    display: none;
+  }
+
+  .blocks li {
+    padding: 1rem 0;
+  }
+  .ul-block {
+    position: absolute;
+    z-index: 1;
+    padding-top: 100px;
+    height: 100%;
+    width: 75%;
+    box-shadow: 0 1px 6px 1px rgba(0, 0, 0, 0.6);
+  }
+  .blocks {
+    display: block !important;
+    flex-direction: column;
+    height: 100%;
+    z-index: -999;
+    /* color: blue; */
+    margin: 25%;
+  }
+}
+
+@media screen and (min-width: 730px) {
+  .ul-block {
+    padding: 0 15rem;
   }
 }

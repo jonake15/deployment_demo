@@ -1,66 +1,67 @@
-import { React, useRef } from "react";
+import React from "react";
+
+import { FaHome, FaTimes, FaRegUser, FaBars } from "react-icons/fa";
+import { useRef } from "react";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  const navbar = useRef();
+  const humMenu = useRef();
+  const humClose = useRef();
+  const ulContent = useRef();
   const ul = useRef();
-  const openButton = useRef();
-  const closeButton = useRef();
 
   const handleClick = () => {
-    navbar.current.classList.toggle("block");
+    humMenu.current.classList.toggle("hide");
+    humClose.current.classList.toggle("show");
+    ulContent.current.classList.add("blocks");
     ul.current.classList.toggle("ul-block");
-    openButton.current.classList.toggle("hide");
-    closeButton.current.classList.toggle("show");
-    // ul.current.style.visibility = "visible";
-    // ul.current.style.display = "block";
   };
-  return (
-    <div ref={navbar} className="navbar">
-      <button className="btn" onClick={handleClick}>
-        <i
-          ref={openButton}
-          style={{ color: "white", fontSize: "1.5rem" }}
-          class="bi bi-list"
-        ></i>
-        <i
-          ref={closeButton}
-          style={{ color: "white", fontSize: "1.5rem" }}
-          class="bi bi-x"
-        ></i>
-      </button>
 
-      <ul ref={ul}>
-        <li></li>{" "}
-        <li>
-          <label>
+  return (
+    <>
+      <div ref={ul} className="navbar-test">
+        <ul onClick={handleClick}>
+          <li ref={humMenu}>
+            <FaBars />
+          </li>
+          <li ref={humClose}>
+            <FaTimes />
+          </li>
+        </ul>
+        <ul>
+          <li>ESTATE-HEROS</li>
+        </ul>
+        <ul ref={ulContent}>
+          <li>
             <Link className="link" to="/">
-              Home
+              HOME
             </Link>
-          </label>
-        </li>
-        <li>
-          <Link className="link" to="/houses">
-            Houses
-          </Link>
-        </li>
-        <li>
-          <Link className="link" to="/services">
-            Services
-          </Link>
-        </li>
-        <li>
-          <Link className="link" to="/aboutus">
-            About Us
-          </Link>
-        </li>
-        <li>
-          <Link className="link" to="/contactus">
-            Contact Us
-          </Link>
-        </li>
-      </ul>
-    </div>
+          </li>
+          <li>
+            <Link className="link" to="/show-house-list">
+              HOUSES
+            </Link>
+          </li>
+          <li>
+            {" "}
+            <Link className="link" to="/services">
+              SERVICES
+            </Link>
+          </li>
+          <li>
+            {" "}
+            <Link className="link" to="/show-house-list">
+              CONTACT US
+            </Link>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <FaRegUser />
+          </li>
+        </ul>
+      </div>
+    </>
   );
 };
 
