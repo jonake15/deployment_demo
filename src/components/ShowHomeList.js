@@ -11,7 +11,7 @@ function ShowHouseList() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8082/api/house")
+      .get("http://localhost:8082/api/home")
       .then((res) => {
         setHouse(res.data);
       })
@@ -23,7 +23,7 @@ function ShowHouseList() {
   const houseList =
     house.length === 0
       ? "there is no house record!"
-      : house.map((house, k) => <HouseCard house={house} key={k} />);
+      : house.map((home, k) => <HouseCard house={home} key={k} />);
 
   return (
     <div className="showhouseCont">

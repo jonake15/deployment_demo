@@ -1,7 +1,7 @@
 import React from "react";
-import { utils } from "../dataHome";
+import { utils } from "../../dataHome";
 import House from "./House";
-import Navbar from "./Navbar";
+import Navbar from "../Navbar";
 import abc from "../images/4115337.jpg";
 
 const HomeHouseList = () => {

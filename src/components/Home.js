@@ -1,27 +1,38 @@
 import React, { useEffect, useState, useRef } from "react";
 import Navbar from "./Navbar";
-import HomeHouseList from "./HomeHouseList";
 import FooterSection from "./FooterSection";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
-  const [change, setChange] = useState();
-  const heading = useRef();
-  console.log(heading);
+  const [name, setName] = useState();
+  const container = useRef();
+  const navigate = useNavigate();
+  // console.log(heading);
   useEffect(() => {
-    console.log("Hello World");
-  });
+    axios
+      .get("http://localhost:8082/api/users")
+      .then((res) => {
+        if (res.data.valid) {
+          setName(res.data.username);
+        } else {
+          navigate("/");
+        }
+      })
+      .catch((err) => console.log(err));
+  }, []);
 
-  const changeColor = () => {
-    heading.current.style.color = "blue";
-  };
+  // const changeColor = () => {
+  //   heading.current.style.color = "blue";
+  // };
 
   return (
-    <div className="universalCont">
+    <div ref={container} className="universalCont">
       <Navbar />
       <div className="content-1">
         <div className="heroContainer">
           <button>Rent</button>
-          <button>Sale</button>
+          <button>{name}</button>
 
           <form>
             <h2>Select house to your prefernce</h2>

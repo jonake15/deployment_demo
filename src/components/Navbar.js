@@ -1,8 +1,15 @@
 import React from "react";
-
-import { FaHome, FaTimes, FaRegUser, FaBars } from "react-icons/fa";
+import {
+  FaHandHoldingMedical,
+  FaHome,
+  FaTimes,
+  FaRegUser,
+  FaBars,
+  FaPhoneAlt,
+} from "react-icons/fa";
+import { FaBoxArchive } from "react-icons/fa6";
 import { useRef } from "react";
-import { Link } from "react-router-dom";
+import { NavLink, Link, Outlet } from "react-router-dom";
 
 const Navbar = () => {
   const humMenu = useRef();
@@ -13,8 +20,11 @@ const Navbar = () => {
   const handleClick = () => {
     humMenu.current.classList.toggle("hide");
     humClose.current.classList.toggle("show");
-    ulContent.current.classList.add("blocks");
+    ulContent.current.classList.toggle("blocks");
     ul.current.classList.toggle("ul-block");
+    const newDiv = document.createElement("div");
+    ul.current.appendChild(newDiv);
+    newDiv.classList.add("back");
   };
 
   return (
@@ -33,33 +43,63 @@ const Navbar = () => {
         </ul>
         <ul ref={ulContent}>
           <li>
-            <Link className="link" to="/">
-              HOME
-            </Link>
-          </li>
-          <li>
-            <Link className="link" to="/show-house-list">
-              HOUSES
-            </Link>
+            <NavLink className="link" to="/">
+              <FaHome />
+              &nbsp; HOME
+            </NavLink>
           </li>
           <li>
             {" "}
-            <Link className="link" to="/services">
-              SERVICES
-            </Link>
+            <label for="link">
+              <NavLink className="link" to="/show-house-list">
+                <FaBoxArchive /> &nbsp;BUY
+              </NavLink>
+            </label>
           </li>
           <li>
             {" "}
-            <Link className="link" to="/show-house-list">
-              CONTACT US
-            </Link>
+            <label for="link">
+              <NavLink className="link" to="/show-home-list">
+                <FaBoxArchive /> &nbsp;RENT
+              </NavLink>
+            </label>
+          </li>
+          <li>
+            {" "}
+            <label>
+              <NavLink className="link" to="/services">
+                <FaHandHoldingMedical />
+                &nbsp;SERVICES
+              </NavLink>
+            </label>
+          </li>
+          <li>
+            {" "}
+            <label>
+              <NavLink className="link" to="/about-us">
+                <FaPhoneAlt />
+                &nbsp;ABOUT US
+              </NavLink>
+            </label>
+          </li>
+          <li>
+            {" "}
+            <label>
+              <NavLink className="link" to="/contact-us">
+                <FaPhoneAlt />
+                &nbsp;CONTACT US
+              </NavLink>
+            </label>
           </li>
         </ul>
         <ul>
           <li>
-            <FaRegUser />
+            <NavLink to="/sign-up" style={{ color: "black" }}>
+              <FaRegUser />
+            </NavLink>
           </li>
         </ul>
+        {/* <main><Outlet /></main> */}
       </div>
     </>
   );

@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { utils } from "../data";
+import { utils } from "../../data";
 import House from "./House";
 import axios from "axios";
 

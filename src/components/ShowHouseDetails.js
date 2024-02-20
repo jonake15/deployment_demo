@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import "../App.css";
 import axios from "axios";
+import { FaBed } from "react-icons/fa";
+import { FaDollarSign } from "react-icons/fa";
+import Navbar from "./Navbar";
 
 function ShowHouseDetails(props) {
   const [house, setHouse] = useState({});
@@ -33,41 +36,70 @@ function ShowHouseDetails(props) {
 
   const HouseItem = (
     <div>
-      <table className="table table-hover table-dark">
+      <div className="card-container">
+        <img
+          src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d"
+          alt="houses"
+          height={200}
+        />
+        <div className="desc">
+          <h2>
+            <Link to={`/show-house/${house._id}`}>{house.name}</Link>
+          </h2>
+          <h3>
+            <FaBed />
+            &nbsp; Rooms:
+            {house.rooms}
+          </h3>
+          <h3>
+            <FaDollarSign />
+            &nbsp;Price:{house.price}
+          </h3>
+          <Link to={`/show-house/${house._id}`}>
+            <button className="btnCard">View Details</button>
+          </Link>
+        </div>
+      </div>
+      {/* <table className="table table-hover table-dark">
         <tbody>
           <tr>
             <th scope="row">1</th>
-            <td>Title</td>
+            <td>Location</td>
             <td>{house.name}</td>
           </tr>
           <tr>
             <th scope="row">2</th>
-            <td>Author</td>
-            <td>{house.room}</td>
+            <td>Room</td>
+            <td>{house.rooms}</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Price</td>
+            <td>{house.price}</td>
           </tr>
         </tbody>
-      </table>
+      </table> */}
     </div>
   );
 
   return (
-    <div className="ShowBookDetails">
-      <div className="container">
-        <div className="row">
-          <div className="col-md-10 m-auto">
-            <br /> <br />
-            <Link to="/" className="btn btn-outline-warning float-left">
-              Show House List
-            </Link>
-          </div>
-          <br />
-          <div className="col-md-8 m-auto">
-            <h1 className="display-4 text-center">House's Record</h1>
-            <p className="lead text-center">View House's Info</p>
-            <hr /> <br />
-          </div>
-          <div className="col-md-10 m-auto">{HouseItem}</div>
-          <div className="col-md-6 m-auto">
+    <div className="ShowHouseDetails">
+      <Navbar />
+      <div className="col-md-10 m-auto">
+        <br /> <br />
+        <Link
+          to="/show-house-list"
+          className="btn btn-outline-warning float-left"
+        >
+          Show House List
+        </Link>
+      </div>
+      <br />
+
+      <div className="col-md-10 m-auto">{HouseItem}</div>
+
+      {/* <div className="col-md-6 m-auto">
+
             <button
               type="button"
               className="btn btn-outline-danger btn-lg btn-block"
@@ -77,17 +109,15 @@ function ShowHouseDetails(props) {
             >
               Delete House
             </button>
-          </div>
-          <div className="col-md-6 m-auto">
+          </div> */}
+      {/* <div className="col-md-6 m-auto">
             <Link
               to={`/edit-house/${house._id}`}
               className="btn btn-outline-info btn-lg btn-block"
             >
               Edit House
             </Link>
-          </div>
-        </div>
-      </div>
+          </div> */}
     </div>
   );
 }
